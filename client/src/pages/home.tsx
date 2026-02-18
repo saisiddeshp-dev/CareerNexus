@@ -2,11 +2,22 @@ import { Layout } from "@/components/layout";
 import { Button } from "@/components/ui/button";
 import { useAssessment } from "@/hooks/use-assessment";
 import { motion } from "framer-motion";
-import { ArrowRight, Brain, Target, Trophy } from "lucide-react";
-import heroBg from "@/assets/images/hero-bg.png";
+import { ArrowRight, Brain, Target, Trophy, ShieldCheck } from "lucide-react";
+import { useState } from "react";
+import { Checkbox } from "@/components/ui/checkbox";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
+import { ScrollArea } from "@/components/ui/scroll-area";
 
 export default function Home() {
   const { startAssessment } = useAssessment();
+  const [agreed, setAgreed] = useState(false);
 
   return (
     <Layout>
@@ -68,14 +79,77 @@ export default function Home() {
               />
             </div>
 
+            {/* Terms and Conditions Section */}
+            <div className="flex flex-col items-center space-y-4 mb-8">
+              <div className="flex items-center space-x-3 bg-white/5 border border-white/10 p-4 rounded-xl backdrop-blur-sm group hover:border-cyan-500/30 transition-colors">
+                <Checkbox 
+                  id="terms" 
+                  checked={agreed}
+                  onCheckedChange={(checked) => setAgreed(checked as boolean)}
+                  className="border-white/30 data-[state=checked]:bg-cyan-500 data-[state=checked]:border-cyan-500"
+                />
+                <label 
+                  htmlFor="terms" 
+                  className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-white/70 cursor-pointer"
+                >
+                  I agree to the{" "}
+                  <Dialog>
+                    <DialogTrigger asChild>
+                      <button className="text-cyan-400 hover:text-cyan-300 underline underline-offset-4 decoration-cyan-500/30">
+                        Terms and Conditions
+                      </button>
+                    </DialogTrigger>
+                    <DialogContent className="max-w-2xl bg-slate-950 border-white/10 text-white">
+                      <DialogHeader>
+                        <DialogTitle className="font-orbitron text-2xl text-cyan-400">Terms & Conditions</DialogTitle>
+                        <DialogDescription className="text-white/60 font-rajdhani uppercase tracking-wider">
+                          Last Updated: February 2026
+                        </DialogDescription>
+                      </DialogHeader>
+                      <ScrollArea className="h-[400px] pr-4 mt-4">
+                        <div className="prose prose-invert prose-sm max-w-none text-white/80 space-y-4">
+                          <section>
+                            <h3 className="text-cyan-400 font-orbitron text-sm">1. NATURE AND PURPOSE</h3>
+                            <p>The Platform provides educational assessments intended solely for guidance and self-reflection. It does not provide professional career counselling or psychological diagnosis.</p>
+                          </section>
+                          <section>
+                            <h3 className="text-cyan-400 font-orbitron text-sm">2. NO GUARANTEE</h3>
+                            <p>We do not guarantee admission into any course, job, or institution. Decisions made based on assessment results are entirely your own responsibility.</p>
+                          </section>
+                          <section>
+                            <h3 className="text-cyan-400 font-orbitron text-sm">3. MINORS</h3>
+                            <p>Individuals under 18 may use this Platform only with explicit parental or legal guardian consent.</p>
+                          </section>
+                          <section>
+                            <h3 className="text-cyan-400 font-orbitron text-sm">4. LIABILITY</h3>
+                            <p>To the maximum extent permitted by law, the Platform and its founders shall not be liable for any direct or indirect damages arising from your use of the service.</p>
+                          </section>
+                          <section>
+                            <h3 className="text-cyan-400 font-orbitron text-sm">5. DATA PRIVACY</h3>
+                            <p>We comply with the Indian IT Act 2000 and DPDP Act 2023. We do not sell your personal data to third parties.</p>
+                          </section>
+                          <p className="text-xs text-white/40 italic">Note: This is an abbreviated version of the full terms provided for the Alpha preview.</p>
+                        </div>
+                      </ScrollArea>
+                    </DialogContent>
+                  </Dialog>
+                </label>
+              </div>
+            </div>
+
             <motion.div
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
+              whileHover={agreed ? { scale: 1.05 } : {}}
+              whileTap={agreed ? { scale: 0.95 } : {}}
             >
               <Button 
                 onClick={startAssessment}
+                disabled={!agreed}
                 size="lg" 
-                className="bg-cyan-500 hover:bg-cyan-400 text-black font-orbitron text-lg px-10 py-8 rounded-xl shadow-[0_0_30px_-5px_rgba(6,182,212,0.6)] transition-all duration-300 border-none"
+                className={`font-orbitron text-lg px-10 py-8 rounded-xl transition-all duration-300 border-none ${
+                  agreed 
+                    ? "bg-cyan-500 hover:bg-cyan-400 text-black shadow-[0_0_30px_-5px_rgba(6,182,212,0.6)] cursor-pointer" 
+                    : "bg-white/10 text-white/30 cursor-not-allowed grayscale"
+                }`}
               >
                 Initialize Assessment <ArrowRight className="ml-2 w-5 h-5" />
               </Button>

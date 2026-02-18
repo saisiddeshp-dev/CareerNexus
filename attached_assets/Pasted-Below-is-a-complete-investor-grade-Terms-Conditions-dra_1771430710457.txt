@@ -1,0 +1,212 @@
+Below is a **complete, investor-grade Terms & Conditions draft** designed for **India + global users**, written to **minimize legal exposure**, especially for **career tests involving minors**.
+You can **copy–paste this directly** into your app or website.
+
+> ⚠️ Note: This is a **strong general legal draft**, not a substitute for a paid lawyer review. Startups at alpha/seed stage commonly use documents at this level.
+
+---
+
+# TERMS AND CONDITIONS
+
+**Last Updated:** [Insert Date]
+
+Welcome to **[App Name]** (“Platform”, “we”, “us”, “our”).
+By accessing or using this Platform, you agree to be bound by these Terms and Conditions (“Terms”). If you do not agree, you must not use the Platform.
+
+---
+
+## 1. NATURE AND PURPOSE OF THE PLATFORM
+
+1.1 The Platform provides **educational and self-assessment tools**, including aptitude tests, scenario-based evaluations, and academic competency assessments, intended **solely for guidance and self-reflection**.
+
+1.2 The Platform **does not provide**:
+
+* Professional career counselling
+* Psychological diagnosis
+* Medical, legal, or academic certification
+* Guaranteed predictions of career success or outcomes
+
+1.3 All results, scores, and recommendations are **indicative, non-binding, and advisory only**.
+
+---
+
+## 2. NO GUARANTEE OR ASSURANCE
+
+2.1 The Platform **does not guarantee**:
+
+* Admission into any course, institution, or job
+* Career success, income, performance, or outcomes
+* Accuracy or completeness of predictions
+
+2.2 Career outcomes depend on multiple external factors including but not limited to effort, environment, education, opportunity, socioeconomic conditions, and personal circumstances.
+
+2.3 Users agree that **decisions made based on the Platform are entirely their own responsibility**.
+
+---
+
+## 3. USERS BELOW 18 YEARS OF AGE (MINORS)
+
+3.1 The Platform may be used by individuals under the age of 18 **only with parental or legal guardian consent**.
+
+3.2 By accessing the Platform, the user confirms that:
+
+* They are a parent/guardian, **OR**
+* They have obtained explicit permission from a parent or legal guardian
+
+3.3 We **do not assume responsibility** for decisions made by minors or parents based on Platform outputs.
+
+---
+
+## 4. DISCLAIMER OF LIABILITY
+
+4.1 To the maximum extent permitted by law, the Platform, its founders, developers, affiliates, and partners shall **not be liable** for:
+
+* Any direct, indirect, incidental, consequential, or special damages
+* Emotional distress, academic decisions, or career choices
+* Loss of opportunity, income, or reputation
+
+4.2 The Platform shall **not be held liable** for dissatisfaction arising from:
+
+* Mismatch between expectations and results
+* Misinterpretation of assessment outcomes
+* Decisions taken solely based on Platform suggestions
+
+---
+
+## 5. LIMITATION OF LIABILITY
+
+5.1 Under no circumstances shall total liability exceed the amount paid (if any) by the user to access the Platform.
+
+5.2 If the Platform is accessed free of charge, liability shall be **nil**.
+
+---
+
+## 6. ACCURACY OF CONTENT
+
+6.1 While reasonable efforts are made to ensure quality and relevance, **no representation or warranty** is made regarding:
+
+* Accuracy
+* Completeness
+* Timeliness
+* Suitability for any specific purpose
+
+6.2 Questions, scenarios, and evaluations are **model-based and subjective by design**.
+
+---
+
+## 7. DATA AND PRIVACY
+
+7.1 The Platform may collect limited personal and usage data as outlined in the Privacy Policy.
+
+7.2 We comply with applicable data protection principles including:
+
+* Indian Information Technology Act, 2000
+* Digital Personal Data Protection Act, 2023 (India)
+* GDPR principles (for global users where applicable)
+
+7.3 We do not sell personal data to third parties.
+
+---
+
+## 8. INTELLECTUAL PROPERTY
+
+8.1 All content, including questions, assessments, algorithms, UI design, branding, and results logic, are the **exclusive intellectual property** of the Platform.
+
+8.2 Users may not:
+
+* Copy, reproduce, distribute, or resell content
+* Reverse engineer scoring logic
+* Use content for commercial purposes
+
+---
+
+## 9. USER CONDUCT
+
+Users agree not to:
+
+* Misuse or attempt to manipulate assessments
+* Share false information
+* Attempt unauthorized access to systems
+* Use the Platform for unlawful purposes
+
+Violation may result in suspension or termination without notice.
+
+---
+
+## 10. MODIFICATION OF SERVICES
+
+10.1 We reserve the right to:
+
+* Modify or discontinue any feature
+* Update assessment logic
+* Add or remove content
+
+10.2 Continued use after changes constitutes acceptance of updated Terms.
+
+---
+
+## 11. TERMINATION
+
+11.1 We may suspend or terminate access at our sole discretion for:
+
+* Violation of these Terms
+* Legal or regulatory reasons
+* Security concerns
+
+---
+
+## 12. GOVERNING LAW AND JURISDICTION
+
+12.1 These Terms shall be governed by and construed in accordance with the **laws of India**.
+
+12.2 Courts located in **[Your City, India]** shall have exclusive jurisdiction.
+
+---
+
+## 13. GLOBAL USERS
+
+13.1 Users accessing the Platform outside India do so at their own risk and are responsible for compliance with local laws.
+
+13.2 Nothing in these Terms creates enforceable rights under foreign consumer laws beyond mandatory statutory protections.
+
+---
+
+## 14. SEVERABILITY
+
+If any provision of these Terms is found invalid or unenforceable, the remaining provisions shall remain in full force and effect.
+
+---
+
+## 15. ENTIRE AGREEMENT
+
+These Terms constitute the **entire agreement** between the user and the Platform and supersede all prior communications.
+
+---
+
+## 16. CONTACT INFORMATION
+
+For queries or grievances, contact:
+**Email:** [[support@email.com](mailto:support@email.com)]
+**Entity Name:** [Company / Founder Name]
+
+---
+
+## INVESTOR NOTE (IMPORTANT)
+
+This document:
+
+* Strongly limits liability
+* Avoids deterministic career claims
+* Protects against parental lawsuits
+* Is compliant with Indian and global norms
+* Is suitable for alpha, beta, and early commercial stages
+
+---
+
+### If you want next:
+
+* **Privacy Policy draft**
+* **Parental Consent modal text**
+* **Results-screen safe language**
+* **Investor compliance slide**
+
+Just say the word.
