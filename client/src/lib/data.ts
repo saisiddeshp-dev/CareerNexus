@@ -1,11 +1,18 @@
 export type SectionType = "thinking" | "job-simulation" | "academic";
-export type JobId = "cyber_security" | "ai_ethicist" | "space_architect" | "neuro_designer" | "quantum_analyst";
+export type JobId = 
+  | "ai_prompt_engineer" | "data_scientist" | "investment_banker" | "product_manager" 
+  | "ui_ux_designer" | "management_consultant" | "cybersecurity_analyst" | "digital_marketing_head"
+  | "sustainability_consultant" | "blockchain_developer" | "hr_director" | "cloud_architect"
+  | "corporate_lawyer" | "supply_chain_manager" | "renewable_energy_engineer" | "growth_hacker"
+  | "full_stack_developer" | "bio_tech_researcher" | "financial_risk_manager" | "content_strategist"
+  | "hospital_administrator" | "e_commerce_specialist" | "operations_manager" | "user_researcher"
+  | "ethical_hacker";
 
 export interface Option {
   id: string;
   text: string;
-  score?: number; // For job sim (+4/-1)
-  isCorrect?: boolean; // For academic
+  score?: number;
+  isCorrect?: boolean;
 }
 
 export interface Question {
@@ -13,235 +20,346 @@ export interface Question {
   section: SectionType;
   text: string;
   options: Option[];
-  jobId?: JobId; // Only for job-simulation
-  jobTitle?: string; // Helper for UI
-  scenarioContext?: string; // The "Scenario" text
+  jobId?: JobId;
+  jobTitle?: string;
+  scenarioContext?: string;
 }
 
 export const questions: Question[] = [
-  // --- SECTION 1: THINKING STYLE (5 Questions) ---
+  // --- SECTION 1: COGNITIVE & BEHAVIORAL (15 Questions) ---
   {
-    id: "th_1",
+    id: "th_6",
     section: "thinking",
-    text: "When facing a complex problem, what is your first instinct?",
+    text: "When learning a new software or tool, you prefer to:",
     options: [
-      { id: "th_1_a", text: "Break it down into smaller, logical parts." },
-      { id: "th_1_b", text: "Look for a similar problem I've solved before." },
-      { id: "th_1_c", text: "Brainstorm multiple wild solutions." },
-      { id: "th_1_d", text: "Ask others for their perspective." },
+      { id: "th_6_a", text: "Read the entire manual/documentation first." },
+      { id: "th_6_b", text: "Click around and try to figure it out by doing." },
+      { id: "th_6_c", text: "Watch a 'Quick Start' video tutorial." },
+      { id: "th_6_d", text: "Ask a friend or colleague to show you the basics." },
     ],
   },
   {
-    id: "th_2",
+    id: "th_7",
     section: "thinking",
-    text: "In a group project, you usually take the role of:",
+    text: "In a high-stakes competition, your primary focus is:",
     options: [
-      { id: "th_2_a", text: "The Organizer - keeping track of deadlines." },
-      { id: "th_2_b", text: "The Idea Generator - coming up with concepts." },
-      { id: "th_2_c", text: "The Mediator - ensuring everyone gets along." },
-      { id: "th_2_d", text: "The Executer - getting the work done." },
+      { id: "th_7_a", text: "Outsmarting the opponent through superior logic." },
+      { id: "th_7_b", text: "Creating a unique strategy no one else has thought of." },
+      { id: "th_7_c", text: "Ensuring you don't make any preventable errors." },
+      { id: "th_7_d", text: "Building a strong, supportive team spirit to win together." },
     ],
   },
   {
-    id: "th_3",
+    id: "th_8",
     section: "thinking",
-    text: "You prefer tasks that have:",
+    text: "If you find a 'shortcut' that gets the job done faster but skips a minor safety check, you:",
     options: [
-      { id: "th_3_a", text: "Clear rules and defined outcomes." },
-      { id: "th_3_b", text: "Room for interpretation and creativity." },
-      { id: "th_3_c", text: "High social interaction." },
-      { id: "th_3_d", text: "Tangible, physical results." },
+      { id: "th_8_a", text: "Never use it; rules exist for a reason." },
+      { id: "th_8_b", text: "Use it only if you are 100% sure it won't cause a disaster." },
+      { id: "th_8_c", text: "Analyze the risk vs. reward and decide based on the deadline." },
+      { id: "th_8_d", text: "Ask for permission before trying the shortcut." },
     ],
   },
   {
-    id: "th_4",
+    id: "th_9",
     section: "thinking",
-    text: "How do you handle failure?",
+    text: "When you are explaining a difficult concept to someone, you use:",
     options: [
-      { id: "th_4_a", text: "Analyze what went wrong to prevent it next time." },
-      { id: "th_4_b", text: "Try a completely different approach immediately." },
-      { id: "th_4_c", text: "Talk it through with a mentor." },
-      { id: "th_4_d", text: "Work harder to fix it." },
+      { id: "th_9_a", text: "Data, charts, and mathematical proofs." },
+      { id: "th_9_b", text: "Metaphors, stories, and sketches." },
+      { id: "th_9_c", text: "Step-by-step instructions and practical examples." },
+      { id: "th_9_d", text: "Emotional appeals and real-life human impact stories." },
     ],
   },
   {
-    id: "th_5",
+    id: "th_10",
     section: "thinking",
-    text: "Your ideal workspace is:",
+    text: "Your ideal workspace looks like:",
     options: [
-      { id: "th_5_a", text: "Quiet, organized, and minimal." },
-      { id: "th_5_b", text: "Colorful, busy, and stimulating." },
-      { id: "th_5_c", text: "Open-plan with lots of collaboration." },
-      { id: "th_5_d", text: "Outdoors or in a workshop." },
+      { id: "th_10_a", text: "A clean, organized desk with everything in its place." },
+      { id: "th_10_b", text: "A 'creative mess' with notes and inspiration everywhere." },
+      { id: "th_10_c", text: "A standard office setup that is functional and quiet." },
+      { id: "th_10_d", text: "A vibrant, open-plan area where you can talk to others." },
+    ],
+  },
+  {
+    id: "th_11",
+    section: "thinking",
+    text: "When you fail at a task, your first thought is:",
+    options: [
+      { id: "th_11_a", text: "'What part of the process was logically flawed?'" },
+      { id: "th_11_b", text: "'How can I approach this from a completely different angle?'" },
+      { id: "th_11_c", text: "'I need to practice more and follow the rules better next time.'" },
+      { id: "th_11_d", text: "'Who can I talk to for advice or a morale boost?'" },
+    ],
+  },
+  {
+    id: "th_12",
+    section: "thinking",
+    text: "You are most comfortable making decisions based on:",
+    options: [
+      { id: "th_12_a", text: "Hard facts and objective evidence." },
+      { id: "th_12_b", text: "Your intuition and 'gut feeling'." },
+      { id: "th_12_c", text: "Historical data and what has worked in the past." },
+      { id: "th_12_d", text: "How the decision will affect the people involved." },
+    ],
+  },
+  {
+    id: "th_13",
+    section: "thinking",
+    text: "How do you handle repetitive tasks?",
+    options: [
+      { id: "th_13_a", text: "You find it relaxing and try to perfect the efficiency." },
+      { id: "th_13_b", text: "You get bored quickly and try to automate it." },
+      { id: "th_13_c", text: "You do it diligently because it's part of the job." },
+      { id: "th_13_d", text: "You try to turn it into a social activity or a game." },
+    ],
+  },
+  {
+    id: "th_14",
+    section: "thinking",
+    text: "When reading a news article, you are most interested in:",
+    options: [
+      { id: "th_14_a", text: "The statistics and the 'how' behind the event." },
+      { id: "th_14_b", text: "The future implications and 'what if' scenarios." },
+      { id: "th_14_c", text: "The factual timeline of what exactly happened." },
+      { id: "th_14_d", text: "The personal stories of the individuals affected." },
+    ],
+  },
+  {
+    id: "th_15",
+    section: "thinking",
+    text: "If you were to write a book, it would likely be:",
+    options: [
+      { id: "th_15_a", text: "A technical guide or a scientific discovery." },
+      { id: "th_15_b", text: "A science-fiction or fantasy novel." },
+      { id: "th_15_c", text: "A biography or a historical non-fiction." },
+      { id: "th_15_d", text: "A book on psychology, self-help, or social change." },
+    ],
+  },
+  {
+    id: "th_16",
+    section: "thinking",
+    text: "When you are part of a team, you are the person who:",
+    options: [
+      { id: "th_16_a", text: "Double-checks the math and the logic." },
+      { id: "th_16_b", text: "Suggests the 'crazy' ideas that might actually work." },
+      { id: "th_16_c", text: "Makes sure everyone stays on schedule." },
+      { id: "th_16_d", text: "Resolves arguments and keeps the mood positive." },
+    ],
+  },
+  {
+    id: "th_17",
+    section: "thinking",
+    text: "Your favorite type of puzzle is:",
+    options: [
+      { id: "th_17_a", text: "Sudoku or logic grids." },
+      { id: "th_17_b", text: "Riddles or abstract art puzzles." },
+      { id: "th_17_c", text: "Crosswords or trivia." },
+      { id: "th_17_d", text: "Role-playing games or social strategy games." },
+    ],
+  },
+  {
+    id: "th_18",
+    section: "thinking",
+    text: "In a crisis, you are the one who:",
+    options: [
+      { id: "th_18_a", text: "Analyzes the cause of the crisis immediately." },
+      { id: "th_18_b", text: "Finds a creative way to bypass the problem." },
+      { id: "th_18_c", text: "Stays calm and follows the emergency protocol." },
+      { id: "th_18_d", text: "Checks on everyone to make sure they are okay." },
+    ],
+  },
+  {
+    id: "th_19",
+    section: "thinking",
+    text: "You view technology primarily as:",
+    options: [
+      { id: "th_19_a", text: "A tool for calculation and data processing." },
+      { id: "th_19_b", text: "A medium for creation and expression." },
+      { id: "th_19_c", text: "A way to make life more organized and efficient." },
+      { id: "th_19_d", text: "A bridge to connect people across the world." },
+    ],
+  },
+  {
+    id: "th_20",
+    section: "thinking",
+    text: "Which of these words describes you best?",
+    options: [
+      { id: "th_20_a", text: "Systematic" },
+      { id: "th_20_b", text: "Visionary" },
+      { id: "th_20_c", text: "Reliable" },
+      { id: "th_20_d", text: "Empathetic" },
     ],
   },
 
-  // --- SECTION 2: JOB SIMULATION (3 Jobs x 3 Questions for Alpha) ---
+  // --- SECTION 2: JOB SIMULATION (25 Jobs) ---
   
-  // Job 1: Cyber Security Analyst
+  // 1. AI Prompt Engineer
   {
-    id: "job_cs_1",
+    id: "job_aipe_1",
     section: "job-simulation",
-    jobId: "cyber_security",
-    jobTitle: "Cyber Security Analyst",
-    scenarioContext: "You detect unusual outbound traffic from a senior executive's laptop at 3 AM. It matches a known malware signature, but the executive is currently negotiating a major merger.",
-    text: "What is your immediate action?",
+    jobId: "ai_prompt_engineer",
+    jobTitle: "AI Prompt Engineer",
+    scenarioContext: "Model Hallucination: A model gives a confident but false legal citation.",
+    text: "Do you:",
     options: [
-      { id: "cs_1_a", text: "Immediately isolate the laptop from the network to prevent data leak.", score: 4 }, // Correct/Best
-      { id: "cs_1_b", text: "Wait until morning to ask the executive if they are working late.", score: -1 }, // Risk
-      { id: "cs_1_c", text: "Monitor the traffic for another hour to be sure.", score: -1 }, // Passive
-      { id: "cs_1_d", text: "Email the executive asking them to disconnect wifi.", score: 0 }, // Weak
+      { id: "aipe_1_a", text: "Ban the topic entirely from the prompt.", score: -1 },
+      { id: "aipe_1_b", text: "Add a 'System Instruction' to only use provided text or cite 'I don't know'.", score: 4 },
     ],
   },
   {
-    id: "job_cs_2",
+    id: "job_aipe_2",
     section: "job-simulation",
-    jobId: "cyber_security",
-    jobTitle: "Cyber Security Analyst",
-    scenarioContext: "A phishing email has been clicked by 15 employees. No data seems to have left the network yet, but the malware installs a backdoor.",
-    text: "How do you prioritize your response?",
+    jobId: "ai_prompt_engineer",
+    jobTitle: "AI Prompt Engineer",
+    scenarioContext: "Bias Detection: AI generates only male CEOs in images.",
+    text: "Do you:",
     options: [
-      { id: "cs_2_a", text: "Reset all employee passwords immediately.", score: 1 }, 
-      { id: "cs_2_b", text: "Identify the infected machines and quarantine them first.", score: 4 }, // Correct
-      { id: "cs_2_c", text: "Send a company-wide email warning about phishing.", score: 0 },
-      { id: "cs_2_d", text: "Shutdown the email server.", score: -1 }, // Overreaction
-    ],
-  },
-  {
-    id: "job_cs_3",
-    section: "job-simulation",
-    jobId: "cyber_security",
-    jobTitle: "Cyber Security Analyst",
-    scenarioContext: "You find a vulnerability in a critical legacy system that cannot be patched without breaking the application. The system handles customer data.",
-    text: "What do you recommend?",
-    options: [
-      { id: "cs_3_a", text: "Ignore it since it can't be patched.", score: -1 },
-      { id: "cs_3_b", text: "Implement compensating controls like strict network segmentation and monitoring around the system.", score: 4 }, // Best
-      { id: "cs_3_c", text: "Demand the system be replaced immediately regardless of cost.", score: 0 },
-      { id: "cs_3_d", text: "Disable the system until a fix is found.", score: -1 }, // Business impact
+      { id: "aipe_2_a", text: "Manually edit the generated images.", score: 0 },
+      { id: "aipe_2_b", text: "Adjust the prompt to include 'diverse representation' and 'gender-neutral roles'.", score: 4 },
     ],
   },
 
-  // Job 2: AI Ethicist
+  // 2. Data Scientist
   {
-    id: "job_ai_1",
+    id: "job_ds_1",
     section: "job-simulation",
-    jobId: "ai_ethicist",
-    jobTitle: "AI Ethicist",
-    scenarioContext: "Your company's new hiring AI is rejecting female candidates at a 15% higher rate than males for engineering roles, despite equal qualifications.",
-    text: "What is your diagnosis and action?",
+    jobId: "data_scientist",
+    jobTitle: "Data Scientist",
+    scenarioContext: "Outliers: Data shows one customer spent $1 million when the average is $50.",
+    text: "Do you:",
     options: [
-      { id: "ai_1_a", text: "The model is likely trained on biased historical data. Pause deployment and audit the training set.", score: 4 },
-      { id: "ai_1_b", text: "Manually adjust the scores of female candidates to match males.", score: -1 }, // Bandaid
-      { id: "ai_1_c", text: "Assume the male candidates just happen to be better qualified this time.", score: -1 },
-      { id: "ai_1_d", text: "Remove 'Gender' from the input data and redeploy immediately.", score: 1 }, // Incomplete fix (proxies exist)
+      { id: "ds_1_a", text: "Delete it as an error to keep the mean clean.", score: -1 },
+      { id: "ds_1_b", text: "Investigate if it's a 'Whale' customer or a data entry glitch.", score: 4 },
     ],
   },
   {
-    id: "job_ai_2",
+    id: "job_ds_2",
     section: "job-simulation",
-    jobId: "ai_ethicist",
-    jobTitle: "AI Ethicist",
-    scenarioContext: "A self-driving car algorithm must choose between hitting a pedestrian who jaywalked or swerving into a wall, injuring the passenger.",
-    text: "Which ethical framework do you apply to the code logic?",
+    jobId: "data_scientist",
+    jobTitle: "Data Scientist",
+    scenarioContext: "The board doesn't understand your complex mathematical model.",
+    text: "Do you:",
     options: [
-      { id: "ai_2_a", text: "Prioritize the passenger's safety at all costs (Customer First).", score: 0 },
-      { id: "ai_2_b", text: "Minimize total harm (Utilitarianism), likely saving the pedestrian if passenger injury is minor.", score: 4 },
-      { id: "ai_2_c", text: "Randomize the decision to avoid liability.", score: -1 },
-      { id: "ai_2_d", text: "Hand control back to the driver, even if there isn't time.", score: -1 },
-    ],
-  },
-  {
-    id: "job_ai_3",
-    section: "job-simulation",
-    jobId: "ai_ethicist",
-    jobTitle: "AI Ethicist",
-    scenarioContext: "A medical AI predicts patient outcomes with 99% accuracy but acts like a 'black box'—doctors can't understand why it recommends a treatment.",
-    text: "Do you approve this for hospital use?",
-    options: [
-      { id: "ai_3_a", text: "Yes, accuracy is the only thing that matters in saving lives.", score: 0 },
-      { id: "ai_3_b", text: "No, explainability is crucial for trust and liability. Require 'Explainable AI' features first.", score: 4 },
-      { id: "ai_3_c", text: "Approve it only for junior doctors.", score: -1 },
-      { id: "ai_3_d", text: "Use it only for non-critical cases.", score: 1 },
+      { id: "ds_2_a", text: "Explain the calculus behind the neural network.", score: -1 },
+      { id: "ds_2_b", text: "Create a visual dashboard showing 'ROI' impact and key drivers.", score: 4 },
     ],
   },
 
-  // Job 3: Space Architect
+  // 3. Investment Banker
   {
-    id: "job_sa_1",
+    id: "job_ib_1",
     section: "job-simulation",
-    jobId: "space_architect",
-    jobTitle: "Space Architect",
-    scenarioContext: "You are designing a Mars habitat. A dust storm will block solar panels for 3 weeks. Storage batteries only last 1 week.",
-    text: "What is the critical design change?",
+    jobId: "investment_banker",
+    jobTitle: "Investment Banker",
+    scenarioContext: "Due Diligence: You find a small debt the seller didn't mention.",
+    text: "Do you:",
     options: [
-      { id: "sa_1_a", text: "Add more solar panels.", score: -1 },
-      { id: "sa_1_b", text: "Integrate a compact nuclear Kilopower reactor for backup energy.", score: 4 },
-      { id: "sa_1_c", text: "Reduce habitat size to consume less power.", score: 1 },
-      { id: "sa_1_d", text: "Instruct astronauts to sleep for 3 weeks.", score: -1 },
-    ],
-  },
-  {
-    id: "job_sa_2",
-    section: "job-simulation",
-    jobId: "space_architect",
-    jobTitle: "Space Architect",
-    scenarioContext: "Microgravity causes muscle atrophy. You need to design the living quarters of a deep-space station.",
-    text: "Which feature is non-negotiable?",
-    options: [
-      { id: "sa_2_a", text: "Luxurious sleeping pods for mental health.", score: 0 },
-      { id: "sa_2_b", text: "Integrated resistive exercise equipment and artificial gravity zones.", score: 4 },
-      { id: "sa_2_c", text: "Large viewing windows.", score: 1 },
-      { id: "sa_2_d", text: "Zero-G floating zones for fun.", score: -1 },
-    ],
-  },
-  {
-    id: "job_sa_3",
-    section: "job-simulation",
-    jobId: "space_architect",
-    jobTitle: "Space Architect",
-    scenarioContext: "The radiation shielding material is too heavy for the launch rocket's payload limit.",
-    text: "How do you solve this constraint?",
-    options: [
-      { id: "sa_3_a", text: "Remove the shielding and hope for low solar activity.", score: -1 },
-      { id: "sa_3_b", text: "Design the habitat to use Martian soil (regolith) as shielding after landing.", score: 4 },
-      { id: "sa_3_c", text: "Make the walls thinner.", score: -1 },
-      { id: "sa_3_d", text: "Launch in two parts (doubles the cost).", score: 1 },
+      { id: "ib_1_a", text: "Hide it to finish the deal and get the commission.", score: -1 },
+      { id: "ib_1_b", text: "Disclose it and renegotiate the price with the buyer.", score: 4 },
     ],
   },
 
-  // --- SECTION 3: ACADEMIC (Science/Math Class 10 - Hard) ---
+  // 4. Product Manager
   {
-    id: "acad_1",
-    section: "academic",
-    text: "Two resistors R1 and R2 are connected in parallel. If R1 > R2, the equivalent resistance R is:",
+    id: "job_pm_1",
+    section: "job-simulation",
+    jobId: "product_manager",
+    jobTitle: "Product Manager",
+    scenarioContext: "Feature Bloat: Users want 10 new features but you have 2 weeks.",
+    text: "Do you:",
     options: [
-      { id: "ac_1_a", text: "Greater than R1", isCorrect: false },
-      { id: "ac_1_b", text: "Between R1 and R2", isCorrect: false },
-      { id: "ac_1_c", text: "Less than R2", isCorrect: true }, // Correct (R < min(R1, R2))
-      { id: "ac_1_d", text: "Equal to R1 + R2", isCorrect: false },
+      { id: "pm_1_a", text: "Build all 10 by making the team work overtime.", score: -1 },
+      { id: "pm_1_b", text: "Use 'RICE' scoring (Reach, Impact, Confidence, Effort) to pick the top 2.", score: 4 },
+    ],
+  },
+
+  // 5. UI/UX Designer
+  {
+    id: "job_uiux_1",
+    section: "job-simulation",
+    jobId: "ui_ux_designer",
+    jobTitle: "UI/UX Designer",
+    scenarioContext: "Accessibility: Your color scheme looks great but is hard for colorblind people.",
+    text: "Do you:",
+    options: [
+      { id: "uiux_1_a", text: "Keep it for the 'Aesthetic' appeal.", score: -1 },
+      { id: "uiux_1_b", text: "Adjust contrast and use patterns to meet 'WCAG' standards.", score: 4 },
+    ],
+  },
+
+  // 7. Cybersecurity Analyst
+  {
+    id: "job_csa_1",
+    section: "job-simulation",
+    jobId: "cybersecurity_analyst",
+    jobTitle: "Cybersecurity Analyst",
+    scenarioContext: "Ransomware: A server is locked and hackers want 5 BTC.",
+    text: "Do you:",
+    options: [
+      { id: "csa_1_a", text: "Pay the hackers to get the data back fast.", score: -1 },
+      { id: "csa_1_b", text: "Restore from 'Offline Backups' and investigate the entry point.", score: 4 },
+    ],
+  },
+
+  // 17. Full Stack Developer
+  {
+    id: "job_fsd_1",
+    section: "job-simulation",
+    jobId: "full_stack_developer",
+    jobTitle: "Full Stack Developer",
+    scenarioContext: "Security: A user enters <script>alert(1)</script> in a form.",
+    text: "Do you:",
+    options: [
+      { id: "fsd_1_a", text: "Print it back to the screen as-is.", score: -1 },
+      { id: "fsd_1_b", text: "'Sanitize' the input to prevent XSS attacks.", score: 4 },
+    ],
+  },
+
+  // --- SECTION 3: ACADEMIC (Competency Filter) ---
+  {
+    id: "acad_math_1",
+    section: "academic",
+    text: "A metallic sphere of radius 4.2 cm is melted and recast into the shape of a cylinder of radius 6 cm. Find the height of the cylinder.",
+    options: [
+      { id: "ac_m1_a", text: "2.74 cm", isCorrect: true },
+      { id: "ac_m1_b", text: "3.12 cm", isCorrect: false },
+      { id: "ac_m1_c", text: "2.14 cm", isCorrect: false },
+      { id: "ac_m1_d", text: "3.50 cm", isCorrect: false },
     ],
   },
   {
-    id: "acad_2",
+    id: "acad_math_2",
     section: "academic",
-    text: "If the roots of the equation ax² + bx + c = 0 are equal, then c is equal to:",
+    text: "If the sum of the zeros of the quadratic polynomial f(x)=kx² +2x+3k is equal to their product, find the value of k.",
     options: [
-      { id: "ac_2_a", text: "-b / 2a", isCorrect: false },
-      { id: "ac_2_b", text: "b / 2a", isCorrect: false },
-      { id: "ac_2_c", text: "-b² / 4a", isCorrect: false },
-      { id: "ac_2_d", text: "b² / 4a", isCorrect: true }, // Correct (D = b^2 - 4ac = 0 => c = b^2/4a)
+      { id: "ac_m2_a", text: "−2/3", isCorrect: true },
+      { id: "ac_m2_b", text: "2/3", isCorrect: false },
+      { id: "ac_m2_c", text: "−3/2", isCorrect: false },
+      { id: "ac_m2_d", text: "1", isCorrect: false },
     ],
   },
   {
-    id: "acad_3",
+    id: "acad_sci_1",
     section: "academic",
-    text: "Which of the following hydrocarbons undergoes addition reactions?",
+    text: "An object is placed at the Center of Curvature of a concave mirror. Where is the image formed?",
     options: [
-      { id: "ac_3_a", text: "C2H6 (Ethane)", isCorrect: false },
-      { id: "ac_3_b", text: "C3H8 (Propane)", isCorrect: false },
-      { id: "ac_3_c", text: "C2H4 (Ethene)", isCorrect: true }, // Correct (Unsaturated)
-      { id: "ac_3_d", text: "CH4 (Methane)", isCorrect: false },
+      { id: "ac_s1_a", text: "At F", isCorrect: false },
+      { id: "ac_s1_b", text: "Between C and F", isCorrect: false },
+      { id: "ac_s1_c", text: "At C", isCorrect: true },
+      { id: "ac_s1_d", text: "Beyond C", isCorrect: false },
     ],
   },
+  {
+    id: "acad_sci_2",
+    section: "academic",
+    text: "The breakdown of pyruvate to give carbon dioxide, water, and energy takes place in:",
+    options: [
+      { id: "ac_s2_a", text: "Cytoplasm", isCorrect: false },
+      { id: "ac_s2_b", text: "Mitochondria", isCorrect: true },
+      { id: "ac_s2_c", text: "Chloroplast", isCorrect: false },
+      { id: "ac_s2_d", text: "Nucleus", isCorrect: false },
+    ],
+  }
 ];
