@@ -4,4 +4,4 @@ pages_build_output_dir = "dist"
 [[d1_databases]]
 binding = "DB"
 database_name = "career_compass_db"
-database_id = "PLACEHOLDER_D1_ID" # Run 'wrangler d1 create career_compass_db' to get this
+database_id = "1a463daa-721d-4874-827e-461657b159e4" # Run 'wrangler d1 create career_compass_db' to get this
