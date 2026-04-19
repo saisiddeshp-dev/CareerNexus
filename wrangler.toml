@@ -1,0 +1,7 @@
+name = "career-compass-alpha"
+pages_build_output_dir = "dist"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "career_compass_db"
+database_id = "PLACEHOLDER_D1_ID" # Run 'wrangler d1 create career_compass_db' to get this
